@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MAIN</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <a href="/pages/students/">🔙 До дому</a>
+        </div>
+        <div id="add">
+            <a href="/pages/students/add/">Новий студент</a>
+        </div>
+        <div id="logo">
+            <img src="/static/images/logo.webp" alt="logo">
+        </div>
+    </header>
+    <div id="container">
+        <div id="success-card">
+            <h1>✅ {{ message }}</h1>
+
+            {% if student %}
+                <p><strong>Ім’я:</strong> {{ student.first_name }} {{ student.last_name }}</p>
+                <p><strong>Спеціальність:</strong> {{ student.major }}</p>
+                <p><strong>Курс:</strong> {{ student.course }}</p>
+                <p><strong>Email:</strong> {{ student.email }}</p>
+            {% endif %}
+
+            <div class="button-group">
+                {% if action != "delete" %}
+                    <a href="/pages/students/{{ student.id }}" class="button">🔍 Переглянути</a>
+                {% endif %}
+                <a href="/pages/students/" class="button">🔙 Назад до списку</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

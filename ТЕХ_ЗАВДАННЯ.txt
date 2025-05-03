@@ -1,0 +1,37 @@
+-Зробити моделі SQLalchemy !
+-Зробити CRUD методи які будуть використовувати ці моделі для роботи з бд
+-Зробити ручки які будуть використовувати ці моделі
+
+project/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py                  # точка входа
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── student.py           # SQLAlchemy модель
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   └── student.py           # Pydantic-схема для валидации
+│   ├── crud/
+│   │   ├── __init__.py
+│   │   └── student.py           # функции работы с БД
+│   ├── db/
+│   │   ├── __init__.py
+│   │   └── session.py           # подключение к БД
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── student.py           # эндпоинты
+│   └── config.py                # настройки (например, URL базы)
+│
+├── requirements.txt
+└── README.md
+
+
+Що?	Де?
+ORM-моделі	app/models/student_schema.py
+Pydantic-схеми	app/schemas/student.py
+CRUD-функції	app/crud/student.py
+Роутери (ручки)	app/api/student.py
+Сесія, Engine	app/db/session.py
+Ініціалізація БД (створення таблиць)	app/db/init_db.py

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update student</title>
+    <link rel="stylesheet" href="/static/styles/style_edit_form.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <a href="/pages/students/">🔙 До дому</a>
+        </div>
+        <div id="add">
+            <a href="/pages/students/add/">Новий студент</a>
+        </div>
+        <div id="logo">
+            <img src="/static/images/logo.webp" alt="logo">
+        </div>
+    </header>
+    <div class="container">
+        <h1>📋 Update Student</h1>
+
+        <form method="post" action="/pages/students/{{ student.student_id }}/edit">
+    <!--        <input type="hidden" name="student_id" value="{{ student.id }}">          ЯКШО б мені треба було скрито відправити айді пост запросом то можна ось так  -->
+
+            <input type="text" name="first_name" placeholder="First name" value="{{ first_name or student.first_name }}"><br>
+            <input type="text" name="last_name" placeholder="Last name" value="{{ last_name or student.last_name }}"><br>
+            <input type="date" name="date_of_birth" value="{{ date_of_birth or student.date_of_birth }}"><br>
+            <input type="email" name="email" placeholder="Email" value="{{ email or student.email }}"><br>
+            <input type="text" name="phone_number" placeholder="Phone number" value="{{ phone_number or student.phone_number }}"><br>
+            <input type="text" name="address" placeholder="Address" value="{{ address or student.address }}"><br>
+            <input type="number" name="enrollment_year" placeholder="Enrollment Year" value="{{ enrollment_year or student.enrollment_year }}"><br>
+            <input type="text" name="major" placeholder="Major" value="{{ major or student.major }}"><br>
+            <input type="number" name="course" placeholder="Course (e.g. 1, 2, 3)" value="{{ course or student.course }}"><br>
+            <textarea name="special_notes" placeholder="Special Notes (optional)">{{ special_notes or student.special_notes }}</textarea><br>
+            <input type="file" name="photo" id="photo" accept="image/*">
+
+            <button type="submit">✅ Edit Student</button>
+        </form>
+    </div>
+
+    <br>
+    <a href="/pages/students/">🔙 Back to Student List</a>
+</body>
+</html>

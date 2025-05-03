@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students List</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <a href="/pages/students/">🔙 До дому</a>
+        </div>
+        <div id="add">
+            <a href="/pages/students/add/">Новий студент</a>
+        </div>
+        <div id="logo">
+            <img src="/static/images/logo.webp" alt="logo">
+        </div>
+    </header>
+    <h1>Students</h1>
+
+    <form method="get" action="/pages/students/">
+        <input type="text" name="first_name" placeholder="First name" value="{{ first_name or '' }}">
+        <input type="text" name="last_name" placeholder="Last name" value="{{ last_name or '' }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <h1>Список студентов</h1>
+    <div>
+        {% for student in students %}
+        <div class="student-card">
+            <img src="/static/images/{{ student.photo }}" alt="Фото студента">
+            <div class="details">
+                <h2>ID: {{ student.student_id }}</h2>
+                <p>Полное имя: {{ student.first_name }} {{ student.last_name }}</p>
+                <p>Email: {{ student.email }}</p>
+                <p>Специальность: {{ student.major }}</p>
+                <p>Курс: {{ student.course }}</p>
+                <!-- Добавьте другие атрибуты по вашему усмотрению -->
+            </div>
+            <a href="/pages/students/{{ student.student_id }}">Подивитись всю інфу🔎</a>
+            <a href="/pages/students/{{ student.student_id }}">Редагувати✒️</a>
+            <a href="/pages/students/{{ student.student_id }}/delete_user" class="delete">Видалити студента🗑️</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

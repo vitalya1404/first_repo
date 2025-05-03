@@ -1,0 +1,42 @@
+<!-- add_student_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="/static/styles/style_add_form.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <a href="/pages/students/">🔙 До дому</a>
+        </div>
+        <div id="add">
+            <a href="/pages/students/add/">Новий студент</a>
+        </div>
+        <div id="logo">
+            <img src="/static/images/logo.webp" alt="logo">
+        </div>
+    </header>
+    <div class="container">
+        <h1>📋 Add New Student</h1>
+        <form method="post" action="/pages/students/add/" id="new_student_form">
+            <input type="text" name="first_name" placeholder="First name" required><br>
+            <input type="text" name="last_name" placeholder="Last name" required><br>
+            <input type="date" name="date_of_birth" placeholder="Date of Birth (YYYY-MM-DD)" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="text" name="phone_number" placeholder="Phone number" required><br>
+            <input type="text" name="address" placeholder="Address" required><br>
+            <input type="number" name="enrollment_year" placeholder="Enrollment Year" required><br>
+            <input type="text" name="major" placeholder="Major" required><br>
+            <input type="number" name="course" placeholder="Course (e.g. 1, 2, 3)" required><br>
+            <textarea name="special_notes" placeholder="Special Notes (optional)"></textarea><br>
+            <label for="photo">Фото студента:</label>
+            <input type="file" name="photo" id="photo" accept="image/*" required>
+            <button type="submit">✅ Add Student</button>
+        </form>
+        <a href="/pages/">🔙 Back to Student List</a>
+    </div>
+    <br>
+
+</body>
+</html>

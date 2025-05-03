@@ -1,0 +1,45 @@
+/* Контейнер повідомлення */
+.success-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок */
+.success-container h1 {
+    text-align: center;
+    color: #27ae60; /* зелений */
+    margin-bottom: 1.5rem;
+}
+
+/* Інформація про студента */
+.success-container p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+/* Центрування кнопок */
+.success-container .actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Кнопки */
+.success-container .button {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.success-container .button:hover {
+    background-color: #2980b9;
+}

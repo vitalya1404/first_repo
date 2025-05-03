@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student full info</title>
+    <link rel="stylesheet" href="/static/styles/style_full_info.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <a href="/pages/students/">🔙 До дому</a>
+        </div>
+        <div id="add">
+            <a href="/pages/students/add/">Новий студент</a>
+        </div>
+        <div id="logo">
+            <img src="/static/images/logo.webp" alt="logo">
+        </div>
+    </header>
+    <div class="container">
+        <h1>Информация о студенте</h1>
+        <div class="student-profile">
+            <img src="/static/images/{{ student.photo }}" alt="Фото студента">
+            <div class="student-info">
+                <h2>ID: {{ student.student_id }}</h2>
+                <p><strong>Полное имя:</strong> {{ student.first_name }} {{ student.last_name }}</p>
+                <p><strong>Email:</strong> {{ student.email }}</p>
+                <p><strong>Дата рождения:</strong> {{ student.date_of_birth }}</p>
+                <p><strong>Адрес:</strong> {{ student.address }}</p>
+                <p><strong>Год поступления:</strong> {{ student.enrollment_year }}</p>
+                <p><strong>Курс:</strong> {{ student.course }}</p>
+                <p><strong>Специальность:</strong> {{ student.major }}</p>
+                <p><strong>Специальные заметки:</strong> {{ student.special_notes }}</p>
+            </div>
+        </div>
+        <a href="/pages/students/{{ student.student_id }}/edit"> ✒️ Edit Info</a><br>
+        <br>
+        <a href="/pages/students/">🔙 Back to Student List</a>
+    </div>
+</body>
+</html>
