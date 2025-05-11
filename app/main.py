@@ -3,6 +3,7 @@ from fastapi import FastAPI
 
 from app.api.student_router import students_router
 from app.db.init_db import create_tables, delete_tables
+from app.demo_auth.views import demo_auth_router
 from app.repositories.student_repositories import insert_startpack_students
 from pages.pages import pages_router
 from fastapi.staticfiles import StaticFiles
@@ -29,6 +30,7 @@ def create_app() -> FastAPI:
     # Підключаємо маршрути
     app.include_router(students_router)
     app.include_router(pages_router)
+    app.include_router(demo_auth_router)
 
     return app
 
